@@ -6,11 +6,11 @@
     "All the command line options for the Lambda command can be specified in this file."
   ],
   "profile": "VisualStudioTest",
-  "region": "us-east-1",
+  "region": "us-west-2",
   "configuration": "Release",
   "s3-prefix": "AWSServerless3/",
   "template": "serverless.template",
   "template-parameters": "",
   "s3-bucket" : "vishal-demo5",
-  "stack-name" : "lambdademo-stack12347"
+  "stack-name" : "lambdademo1-stack12347"
 }
