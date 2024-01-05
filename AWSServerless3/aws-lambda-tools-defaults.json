@@ -11,6 +11,6 @@
   "s3-prefix": "AWSServerless3/",
   "template": "serverless.template",
   "template-parameters": "",
-  "s3-bucket" : "vishal-demo5",
+  "s3-bucket" : "vishal-demo6",
   "stack-name" : "lambdademo1-stack12347"
 }
