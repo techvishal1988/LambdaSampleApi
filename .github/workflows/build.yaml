@@ -44,3 +44,4 @@ jobs:
       run: zip -r myapp.zip out    
     - name: Copy Artifact to S3
       run: aws s3 cp myapp.zip s3://testkarlo12/
+    - run: aws lambda update-function-code --function-name=aws-graphql  --zip-file=fileb://myapp.zip 
