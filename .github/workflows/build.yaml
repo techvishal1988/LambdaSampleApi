@@ -36,6 +36,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Install aws cli
+      uses: azure/setup-kubectl@v2.0
+      with:
+        version: 'v1.24.0' # default is latest stable
+      id: install
     - name: Upload to S3
       uses: aws-actions/configure-aws-credentials@v1
       with:
