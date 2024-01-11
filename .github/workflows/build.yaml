@@ -44,4 +44,18 @@ jobs:
       run: zip -r demoapp.zip out    
     - name: Copy Artifact to S3
       run: aws s3 cp demoapp.zip s3://rsystems-demo1238/
-    - run: aws lambda update-function-code --function-name=aws-graphql  --zip-file=fileb://demoapp.zip 
+  deploy-production:
+      runs-on: ubuntu-latest
+      needs: build
+      if: github.event_name != 'pull_request'
+      environment: production
+      steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install aws cli
+        uses: azure/setup-kubectl@v2.0
+        with:
+          version: 'v1.24.0' # default is latest stable
+        id: install
+      - name: Configure AWS
+      - run: aws lambda update-function-code --function-name=aws-graphql  --zip-file=fileb://demoapp.zip 
