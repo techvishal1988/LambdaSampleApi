@@ -39,9 +39,9 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-2
+        aws-region: us-east-1
     - name: Zip Artifact
       run: zip -r demoapp.zip out    
     - name: Copy Artifact to S3
       run: aws s3 cp demoapp.zip s3://rsystems-demo1238/
-    - run: aws lambda update-function-code --function-name=aws-graphql  --zip-file=fileb://demoapp.zip 
+    #- run: aws lambda update-function-code --function-name=aws-graphql  --zip-file=fileb://demoapp.zip 
